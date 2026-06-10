@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>釜山trip ✿</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Falling Petals Canvas -->
+<canvas id="petals-canvas"></canvas>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-sub">Busan Trip · 2026</p>
+  <h1 class="hero-title">釜山 <span>春旅</span> 手帖</h1>
+  <p class="hero-tagline">六天五夜自由行</p>
+  <div class="hero-meta">
+    <div class="meta-chip"><span class="icon">🌸</span> 6月15日 – 6月20日</div>
+    <!-- <div class="meta-chip"><span class="icon">🌊</span> 釜山中心7飯店</div> -->
+  </div>
+</header>
+
+<!-- FLIGHTS -->
+<div class="flight-bar">
+  <div class="flight-card">
+    <div>
+      <div class="flight-dir">去程 Outbound</div>
+      <div class="flight-route">
+        TPE
+        <div class="flight-line"></div>
+        PUS
+      </div>
+      <div class="flight-detail">6/15（一） 15:45 → 19:00</div>
+    </div>
+    <div class="flight-badge">CI186</div>
+  </div>
+  <div class="flight-card">
+    <div>
+      <div class="flight-dir">回程 Return</div>
+      <div class="flight-route">
+        PUS
+        <div class="flight-line" style="transform: scaleX(-1)"></div>
+        TPE
+      </div>
+      <div class="flight-detail">6/20（六） 12:15 → 13:40</div>
+    </div>
+    <div class="flight-badge">CI189</div>
+  </div>
+</div>
+
+<!-- LUGGAGE + HOTEL -->
+<div class="luggage-note">
+  🧳 託運 23kg ✦ 隨身 7kg ✦ 記得帶瓶裝水！
+</div>
+<div class="hotel-banner">
+  🏨 &nbsp;住宿：<strong>Busan Seomyeon Urban Groove Hotel</strong>&nbsp;
+</div>
+
+<!-- TABS -->
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" onclick="switchTab(0)">
+    <span class="tab-date">15</span>
+    <span class="tab-label">JUN 一</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab(1)"> 
+    <span class="tab-date">16</span>
+    <span class="tab-label">JUN 二</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab(2)">
+    <span class="tab-date">17</span>
+    <span class="tab-label">JUN 三</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab(3)">
+    <span class="tab-date">18</span>
+    <span class="tab-label">JUN 四</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab(4)">
+    <span class="tab-date">19</span>
+    <span class="tab-label">JUN 五</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab(5)">
+    <span class="tab-date">20</span>
+    <span class="tab-label">JUN 六</span>
+  </button>
+</nav>
+
+<!-- ══════════════ DAY 1 ══════════════ -->
+<section class="day-panel active" id="day0">
+  <div class="day-header">
+    <span class="day-number">01</span>
+    <span class="day-title">6/15（一） 西面</span>
+    <p class="day-subtitle">Seomyeon · 西面散步</p>
+  </div>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot">✈️</div>
+      <div class="tl-card sea-accent">
+        <div class="tl-header">
+                <span class="tl-title">✈️ T1 — CI186</span>
+                <span class="tl-time-range">13:30 – 13:45</span>
+        </div>
+        <p class="tl-desc">桃園國際機場 T1 出發</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">✈️</div>
+      <div class="tl-card sea-accent">
+        <div class="tl-header">
+                <span class="tl-title">抵達金海機場</span>
+                <span class="tl-time-range">19:00</span>
+        </div>
+        <p class="tl-desc">1. 兌換釜山PASS</p>
+        <p class="tl-desc">2. 換匯 money box、加值T money </p>
+        <div class="tl-links">
+          <a href="https://www.youtube.com/watch?v=aifzMLfSOE8" target="_blank" class="tl-link"><span class="lk-icon"></span>教學影片</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚌</div>
+      <div class="tl-card transit-card">
+        <div class="transit-line">
+          <span>機場巴士 2 號</span>
+          <span class="transit-arrow">→</span>
+          <span class="transit-badge">釜田市場站</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏨</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">飯店Check In</span>
+          <span class="tl-time-range">20:20 – 21:00</span>
+        </div>
+        <p class="tl-desc">抵達金海機場後搭乘機場巴士，約 40 分鐘抵達釜田市場站下車。</p>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/684AkoMoKcHGbwQH7" target="_blank" class="tl-link"><span class="lk-icon">📍</span> Urban Groove Hotel 飯店位置</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="tl-item">
+      <div class="tl-dot">🍚</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">松亭3代豬肉湯飯</span>
+          <span class="tl-time-range">21:30</span>
+        </div>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/TyMw3XvkcPG1SeEv7" target="_blank" class="tl-link"><span class="lk-icon">📍</span>位置</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ DAY 2 ══════════════ -->
+<section class="day-panel" id="day1">
+  <div class="day-header">
+    <span class="day-number">02</span>
+    <span class="day-title">6/16（二） 甘川 + 松島</span>
+    <p class="day-subtitle">Gamcheon & Songdo</p>
+  </div>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot">🍳</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">早餐</span>
+          <span class="tl-time-range">10:00</span>
+        </div>
+        <!-- <p class="tl-desc">於飯店或附近咖啡館簡單用餐，補充體力準備一整天行程。</p> -->
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">💆</div>
+      <div class="tl-card sea-accent">
+        <div class="tl-header">
+          <span class="tl-title">甘川文化村</span>
+          <span class="tl-time-range">10:30</span>
+        </div>
+        <p class="tl-desc">小王子景點拍照</p>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/uJzqmsn68115GSwQ8" target="_blank" class="tl-link"><span class="lk-icon">📍</span>甘川文化村</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚕</div>
+      <div class="tl-card transit-card">
+        <div class="transit-line">
+          <span>計程車前往松島纜車</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚠</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">松島纜車</span>
+          <span class="tl-time-range">13:00</span>
+        </div>
+        <p class="tl-desc">使用釜山PASS</p>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/dHg9augF6HZBz42a9" target="_blank" class="tl-link"><span class="lk-icon">📍</span>松島纜車</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">♨️</div>
+      <div class="tl-card sea-accent">
+        <div class="tl-header">
+          <span class="tl-title">SPA LAND</span>
+          <span class="tl-time-range">16:30 </span>
+        </div>
+        <p class="tl-desc">使用釜山PASS(4 小時)，在裡面順便吃晚餐</p>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/upVXRdEMVPbebYGi8" target="_blank" class="tl-link"><span class="lk-icon">📍</span>SPA LAND</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🛍️</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">西面商圈</span>
+          <span class="tl-time-range">20:30</span>
+        </div>
+        <p class="tl-desc">回飯店有力氣可以到西面商圈晃晃或是逛超市</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ DAY 3 ══════════════ -->
+<section class="day-panel" id="day2">
+  <div class="day-header">
+    <span class="day-number">03</span>
+    <span class="day-title">6/17（三） 市區＋遊艇</span>
+    <p class="day-subtitle">City & Yacht</p>
+  </div>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot">🛍️</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">逛西面商圈</span>
+          <span class="tl-time-range">10:30</span>
+        </div>
+        <p class="tl-desc">逛古來思魚糕、樂天百貨、SPAO、Olive Young 與地下街</p>
+        <div class="tl-links">
+          <a href="https://docs.google.com/spreadsheets/d/1xv2xJcIDD36zK8vFR8YZiki74O0dC1LDYWsg_66ofwc/edit?gid=2130283515#gid=2130283515" target="_blank" class="tl-link"><span class="lk-icon"></span> 代購清單</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🛍️</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">BIFF 廣場 、 南浦洞（買棉被）</span>
+          <span class="tl-time-range">16:00</span>
+        </div>
+        <p class="tl-desc">前往 BIFF 廣場與國際市場 (琦芸推薦永一)，四季被價位落在₩70,000-₩100,000</p>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/hXKyWXnJSX2eTHct7" target="_blank" class="tl-link"><span class="lk-icon">📍</span>영일침구 永一寢具</a>
+          <a href="https://maps.app.goo.gl/Vhx63ixYbYV7uM8V7" target="_blank" class="tl-link"><span class="lk-icon">📍</span>京信寢具</a>
+          <a href="https://maps.app.goo.gl/wneqtS39AWM3MEVd7" target="_blank" class="tl-link"><span class="lk-icon">📍</span>棉被168</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">⚓</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">廣安里海洋休閒運動中心（遊艇報到）</span>
+          <span class="tl-time-range">18:30</span>
+        </div>
+        <p class="tl-desc">19:30登船</p>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/TbmuRDwcmCvtqD9j7" target="_blank" class="tl-link"><span class="lk-icon">📍</span> 報到地點</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚢</div>
+      <div class="tl-card sea-accent">
+        <div class="tl-header">
+          <span class="tl-title">搭遊艇 — Yacht Holic</span>
+          <span class="tl-time-range">19:30 – 20:30</span>
+        </div>
+        <p class="tl-desc">夜間遊艇行程，煙火+拍立得</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏨</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">回飯店</span>
+          <span class="tl-time-range">21:00</span>
+        </div>
+        <p class="tl-desc">宵夜：韓式炸雞（外送至飯店）。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ DAY 4 ══════════════ -->
+<section class="day-panel" id="day3">
+  <div class="day-header">
+    <span class="day-number">04</span>
+    <span class="day-title">6/18（四） 海雲台</span>
+    <p class="day-subtitle">Haeundae · Seaside day</p>
+  </div>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot">🚕</div>
+      <div class="tl-card transit-card">
+        <div class="transit-line">
+          <span>前往 31刀削麵 總店，搭地鐵約 50 分（約 ₩1,800/人）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🍜</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">31 刀削麵 總店</span>
+          <span class="tl-time-range">11:00</span>
+        </div>
+        
+        <div class="tl-links">
+            <a href="https://maps.app.goo.gl/vmSQVKtczxXrFecF9" target="_blank" class="tl-link"><span class="lk-icon">📍</span> 位置</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚕</div>
+      <div class="tl-card transit-card">
+        <div class="transit-line">
+          <span>計程車前往青沙浦車站（約 ₩5,400）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">📷</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">青沙浦車站</span>
+          <span class="tl-time-range">12:30</span>
+        </div>
+        <p class="tl-desc">拍照、咖啡廳、排隊上膠囊列車</p>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/an2vMYAqCckfBju2A" target="_blank" class="tl-link"><span class="lk-icon">📍</span> 位置</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚡</div>
+      <div class="tl-card sea-accent">
+        <div class="tl-header">
+          <span class="tl-title">天空膠囊列車（青沙浦 → 尾浦）</span>
+          <span class="tl-time-range">14:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">♨️</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">Club D Oasis</span>
+          <span class="tl-time-range">18:00</span>
+        </div>
+        <p class="tl-desc">看情況是否要再去汗蒸幕</p>
+        <div class="tl-links">
+            <a href="https://maps.app.goo.gl/an2vMYAqCckfBju2A" target="_blank" class="tl-link"><span class="lk-icon">📍</span> 位置</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ DAY 5 ══════════════ -->
+<section class="day-panel" id="day4">
+<div class="day-header">
+    <span class="day-number">05</span>
+    <span class="day-title">6/19（五） 白淺灘</span>
+    <p class="day-subtitle">Baeksaengtan · Beach & food</p>
+</div>
+<div class="timeline">
+
+    <div class="tl-item">
+    <div class="tl-dot">🏖️</div>
+    <div class="tl-card">
+        <div class="tl-header">
+        <span class="tl-title">白淺灘（Baeksaengtan）</span>
+        </div>
+        <p class="tl-desc">沙灘散步與海景拍照，適合上午悠閒活動。</p>
+    </div>
+    </div>
+
+    <div class="tl-item">
+    <div class="tl-dot">🍗</div>
+    <div class="tl-card">
+        <div class="tl-header">
+            <span class="tl-title">明星（名聲）一隻雞</span>
+        </div>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/7NbewTw2xevCVjus6" target="_blank" class="tl-link"><span class="lk-icon">📍</span> 位置</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="tl-item">
+    <div class="tl-dot">🏘️</div>
+    <div class="tl-card sea-accent">
+        <div class="tl-header">
+        <span class="tl-title">白淺灘文化村</span>
+        </div>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/Ubzs2VRJDNCmfKJg6" target="_blank" class="tl-link"><span class="lk-icon">📍</span> 位置</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="tl-item">
+    <div class="tl-dot">🛒</div>
+    <div class="tl-card">
+        <div class="tl-header">
+            <span class="tl-title">樂天超市 · Olive Young</span>
+        </div>
+        <p class="tl-desc">買零食伴手禮</p>
+    </div>
+    </div>
+
+</div>
+</section>
+
+<!-- ══════════════ DAY 6 ══════════════ -->
+<section class="day-panel" id="day5">
+  <div class="day-header">
+    <span class="day-number">06</span>
+    <span class="day-title">6/20（六）回程 · 再見釜山</span>
+  </div>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot">🏨</div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">Check Out</span>
+          <span class="tl-time-range">8:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚌</div>
+      <div class="tl-card transit-card">
+        <div class="transit-line">
+          <span class="transit-badge">機場巴士 2 號</span>
+          <span class="transit-arrow">→</span>
+          <span class="transit-badge">金海機場站</span>
+          <span>（約 40 分）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">✈️</div>
+      <div class="tl-card sea-accent">
+        <div class="tl-header">
+          <span class="tl-title">CI189 — 返程台北</span>
+        </div>
+        <div class="tl-links">
+          <a href="https://maps.app.goo.gl/tBMBecLccbLkMjns8" target="_blank" class="tl-link"><span class="lk-icon">📍</span> 金海國際機場</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sakura-divider">✿ ✿ End ✿ ✿</div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="wave-footer">
+  <p class="footer-title">✿ 釜山春旅 2025 ✿</p>
+  <p>6月152日 – 6月20日 · 五日四夜 · 中華航空</p>
+  <a href="https://maps.app.goo.gl/TGBiVLnqgVAH9cNLA" target="_blank" class="back-home-btn">
+    🏨 飯店位置
+  </a>
+</footer>
+
+<script>
+function switchTab(idx) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+  document.querySelectorAll('.day-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
+  window.scrollTo({ top: document.querySelector('.tab-nav').offsetTop - 8, behavior: 'smooth' });
+}
+
+// ── FALLING PETALS ──
+const canvas = document.getElementById('petals-canvas');
+const ctx = canvas.getContext('2d');
+let petals = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+const COLORS = ['#f7c5d0','#f9dce4','#fbb8c8','#e8a0b4','#fde8ee','#c8e8f4','#b8dce8'];
+
+function randomPetal() {
+  return {
+    x: Math.random() * W,
+    y: -20,
+    r: 4 + Math.random() * 6,
+    vx: (Math.random() - 0.5) * 1.2,
+    vy: 0.6 + Math.random() * 1.4,
+    angle: Math.random() * Math.PI * 2,
+    spin: (Math.random() - 0.5) * 0.06,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    opacity: 0.5 + Math.random() * 0.4
+  };
+}
+
+for (let i = 0; i < 28; i++) {
+  const p = randomPetal();
+  p.y = Math.random() * H;
+  petals.push(p);
+}
+
+function drawPetal(p) {
+  ctx.save();
+  ctx.translate(p.x, p.y);
+  ctx.rotate(p.angle);
+  ctx.globalAlpha = p.opacity;
+  ctx.fillStyle = p.color;
+  ctx.beginPath();
+  ctx.ellipse(0, 0, p.r * 0.55, p.r, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function animate() {
+  ctx.clearRect(0, 0, W, H);
+  petals.forEach(p => {
+    p.x += p.vx + Math.sin(p.angle * 0.3) * 0.4;
+    p.y += p.vy;
+    p.angle += p.spin;
+    if (p.y > H + 20) {
+      Object.assign(p, randomPetal());
+    }
+    drawPetal(p);
+  });
+  if (Math.random() < 0.04 && petals.length < 55) petals.push(randomPetal());
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+</body>
+</html>

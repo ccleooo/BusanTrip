@@ -1,0 +1,586 @@
+  :root {
+    --sakura-pale: #fdf0f3;
+    --sakura-blush: #f7c5d0;
+    --sakura-rose: #e8849a;
+    --sakura-deep: #c4546e;
+    --sakura-bark: #7a4a50;
+    --sea-pale: #e8f4f8;
+    --sea-light: #b8dce8;
+    --sea-mid: #5ba3be;
+    --sea-deep: #2e6e8a;
+    --sea-dark: #1a4a5c;
+    --cream: #faf6f0;
+    --warm-white: #fffcf8;
+    --text-dark: #2d1f22;
+    --text-mid: #6b4a50;
+    --text-muted: #a08088;
+    --petal-gold: #e8c88a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── PETAL CANVAS ── */
+  #petals-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(160deg, #fde8ee 0%, #e8f4f8 55%, #c8e8f4 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    border-bottom: 1.5px solid var(--sakura-blush);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #f9d8e4 0%, transparent 70%);
+    opacity: 0.6;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #c8e8f4 0%, transparent 70%);
+    opacity: 0.5;
+  }
+
+  .hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--sakura-deep);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    opacity: 0.8;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 700;
+    color: var(--sakura-bark);
+    line-height: 1.2;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-title span {
+    color: var(--sea-deep);
+  }
+
+  .hero-tagline {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .meta-chip {
+    background: white;
+    border: 1px solid var(--sakura-blush);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: 12px;
+    color: var(--text-mid);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(196,84,110,0.08);
+  }
+
+  .meta-chip .icon { font-size: 14px; }
+
+  /* ── FLIGHT CARDS ── */
+  .flight-bar {
+    position: relative;
+    z-index: 1;
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border-bottom: 1px solid #f0e4e8;
+    flex-wrap: wrap;
+  }
+
+  .flight-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 32px;
+    border-right: 1px solid #f0e4e8;
+    flex: 1;
+    min-width: 260px;
+    max-width: 400px;
+  }
+
+  .flight-card:last-child { border-right: none; }
+
+  .flight-dir {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--sakura-deep);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .flight-route {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .flight-line {
+    flex: 1;
+    height: 1px;
+    background: var(--sakura-blush);
+    position: relative;
+  }
+
+  .flight-line::after {
+    content: '✈';
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: var(--sakura-rose);
+  }
+
+  .flight-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .flight-badge {
+    background: var(--sakura-pale);
+    border: 1px solid var(--sakura-blush);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--sakura-deep);
+    white-space: nowrap;
+  }
+
+  /* ── LUGGAGE NOTE ── */
+  .luggage-note {
+    position: relative;
+    z-index: 1;
+    background: var(--sea-pale);
+    border-bottom: 1px solid var(--sea-light);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    color: var(--sea-dark);
+    letter-spacing: 1px;
+  }
+
+  /* ── HOTEL BANNER ── */
+  .hotel-banner {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(90deg, var(--sakura-bark) 0%, var(--sea-dark) 100%);
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 300;
+  }
+
+  .hotel-banner strong {
+    font-weight: 500;
+    color: var(--petal-gold);
+  }
+
+  /* ── TAB NAV ── */
+  .tab-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    border-bottom: 1px solid var(--sakura-blush);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    box-shadow: 0 2px 12px rgba(196,84,110,0.08);
+  }
+
+  .tab-nav::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 16px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    transition: all 0.25s ease;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  .tab-btn:hover { background: var(--sakura-pale); }
+
+  .tab-btn.active {
+    border-bottom-color: var(--sakura-deep);
+    background: var(--sakura-pale);
+  }
+
+  .tab-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--sakura-bark);
+    display: block;
+  }
+
+  .tab-btn.active .tab-date { color: var(--sakura-deep); }
+
+  .tab-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── DAY PANELS ── */
+  .day-panel {
+    display: none;
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 24px 60px;
+  }
+
+  .day-panel.active { display: block; }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 80px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 36px;
+    top: 20px;
+    bottom: 20px;
+    width: 1.5px;
+    background: linear-gradient(to bottom, var(--sakura-blush), var(--sea-light), var(--sakura-blush));
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 32px;
+  }
+
+  .tl-item:last-child { margin-bottom: 0; }
+
+  .tl-dot {
+    position: absolute;
+    left: -51px;
+    top: 18px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--sakura-blush);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(196,84,110,0.12);
+    z-index: 2;
+  }
+
+  .tl-dot.sea {
+    border-color: var(--sea-light);
+  }
+
+  .tl-time {
+    position: absolute;
+    left: -79px;
+    top: 20px;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-align: right;
+    width: 24px;
+    line-height: 1.3;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .tl-card {
+    background: white;
+    border: 1px solid #f0e4e8;
+    border-radius: 16px;
+    padding: 18px 22px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tl-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(196,84,110,0.1);
+  }
+
+  .tl-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--sakura-rose), var(--sakura-blush));
+    border-radius: 4px 0 0 4px;
+  }
+
+  .tl-card.sea-accent::before {
+    background: linear-gradient(to bottom, var(--sea-mid), var(--sea-light));
+  }
+
+  .tl-card.transit-card {
+    background: #f9f6ff;
+    border-color: #e8e0f0;
+    border-radius: 12px;
+    padding: 12px 18px;
+  }
+
+  .tl-card.transit-card::before {
+    background: linear-gradient(to bottom, #a08cc8, #c8b8e8);
+  }
+
+  .tl-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .tl-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark);
+    flex: 1;
+  }
+
+  .tl-time-range {
+    font-size: 14px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-family: 'Dancing Script', serif;
+    font-style: italic;
+  }
+
+  .tl-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+
+  .tl-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .tl-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--sea-deep);
+    background: var(--sea-pale);
+    border: 1px solid var(--sea-light);
+    border-radius: 20px;
+    padding: 5px 12px;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-weight: 400;
+  }
+
+  .tl-link:hover {
+    background: var(--sea-light);
+    color: var(--sea-dark);
+    transform: scale(1.02);
+  }
+
+  .tl-link .lk-icon { font-size: 12px; }
+
+  .transit-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #7a6a9a;
+    flex-wrap: wrap;
+  }
+
+  .transit-badge {
+    background: #ede8f8;
+    border: 1px solid #d0c4ec;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #6a5a8a;
+    white-space: nowrap;
+  }
+
+  .transit-arrow { color: #b0a0c8; }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .day-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--sakura-blush);
+    display: block;
+  }
+
+  .day-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--sakura-bark);
+    margin-top: -8px;
+    display: block;
+  }
+
+  .day-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* ── SAKURA DIVIDER ── */
+  .sakura-divider {
+    text-align: center;
+    color: var(--sakura-blush);
+    font-size: 16px;
+    letter-spacing: 8px;
+    margin: 24px 0;
+    opacity: 0.6;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 36px; }
+    .timeline { padding-left: 60px; }
+    .tl-dot { left: -41px; }
+    .tl-time { left: -59px; }
+    .flight-card { padding: 14px 20px; }
+    .day-panel { padding: 32px 16px 48px; }
+    .day-number { font-size: 52px; }
+    /* 手機版：flight-card 置中並改為直向堆疊 */
+    .flight-bar {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .flight-card {
+      width: calc(100% - 32px);
+      max-width: 460px;
+      margin: 8px auto;
+      border-right: none;
+    }
+  }
+
+  /* ── WAVE FOOTER ── */
+  .wave-footer {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, var(--sakura-bark) 0%, var(--sea-dark) 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px 48px;
+    margin-top: 0;
+  }
+
+  .wave-footer p {
+    font-size: 12px;
+    opacity: 0.6;
+    letter-spacing: 2px;
+    margin-top: 8px;
+  }
+
+  .wave-footer .footer-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--petal-gold);
+    opacity: 1;
+    letter-spacing: 1px;
+  }
+
+  .back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+  }
+
+  .back-home-btn:hover { background: rgba(255,255,255,0.22); }
